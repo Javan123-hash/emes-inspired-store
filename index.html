@@ -1,27 +1,31 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LOVE IS WAR® — Independent Streetwear</title>
+  <title>LOVE IS WAR — Born from Conflict</title>
 
-  <meta name="description" content="LOVE IS WAR® is an independent fashion label exploring identity, conflict, emotion and self-expression through clothing.">
+  <meta
+    name="description"
+    content="LOVE IS WAR. Born from Conflict. An exploration of the art of being human in the presence of another. Nairobi, Kenya. International delivery."
+  >
+
+  <meta name="theme-color" content="#f3f0e9">
 
   <style>
     :root {
-      --black: #11110f;
-      --cream: #f2efe7;
-      --red: #c62828;
-      --grey: #77766f;
-      --line: rgba(17, 17, 15, 0.22);
+      --background: #f3f0e9;
+      --foreground: #171714;
+      --muted: #77756e;
+      --line: rgba(23, 23, 20, 0.25);
+      --page-padding: 5vw;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -29,9 +33,10 @@
     }
 
     body {
-      background: var(--cream);
-      color: var(--black);
+      background: var(--background);
+      color: var(--foreground);
       font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
     }
 
     a {
@@ -40,291 +45,229 @@
     }
 
     button {
+      color: inherit;
       font: inherit;
-    }
-
-    img {
-      display: block;
-      width: 100%;
     }
 
     /* ANNOUNCEMENT */
 
     .announcement {
-      background: var(--black);
-      color: var(--cream);
-      text-align: center;
       padding: 10px 15px;
-      font-size: 10px;
+      text-align: center;
+      font-size: 9px;
       letter-spacing: 2px;
+      border-bottom: 1px solid var(--line);
       text-transform: uppercase;
     }
 
     /* NAVIGATION */
 
-    header {
-      padding: 22px 5%;
+    .navbar {
+      min-height: 76px;
+      padding: 18px var(--page-padding);
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--line);
+      align-items: center;
       gap: 20px;
+      border-bottom: 1px solid var(--line);
     }
 
     .logo {
-      font-size: clamp(17px, 2vw, 25px);
       font-weight: 900;
+      font-size: clamp(17px, 2vw, 24px);
       letter-spacing: -1.5px;
       white-space: nowrap;
     }
 
-    .logo span {
-      color: var(--red);
-    }
-
-    nav {
+    .nav-links {
       display: flex;
+      gap: 28px;
       align-items: center;
-      gap: 30px;
-    }
-
-    nav a {
       font-size: 10px;
-      text-transform: uppercase;
       letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
 
-    nav a:hover {
-      color: var(--red);
+    .nav-links a:hover {
+      opacity: 0.55;
     }
 
-    .nav-shop {
-      border: 1px solid var(--black);
-      padding: 12px 18px;
+    .menu-button {
+      display: none;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      font-size: 11px;
+      letter-spacing: 1px;
     }
 
     /* HERO */
 
     .hero {
-      min-height: 610px;
+      min-height: 77vh;
+      padding: 50px var(--page-padding) 38px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 45px 5% 30px;
-      background: var(--cream);
+      position: relative;
       overflow: hidden;
     }
 
     .hero-top {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       gap: 20px;
+    }
+
+    .eyebrow {
       font-size: 10px;
       letter-spacing: 2px;
+      line-height: 1.8;
       text-transform: uppercase;
+    }
+
+    .hero-location {
+      text-align: right;
+      color: var(--muted);
     }
 
     .hero-title {
-      font-size: clamp(70px, 15.5vw, 220px);
+      font-size: clamp(65px, 15vw, 205px);
+      line-height: 0.76;
+      letter-spacing: -0.095em;
       font-weight: 900;
-      letter-spacing: -0.105em;
-      line-height: 0.78;
       text-transform: uppercase;
-      margin: 70px 0;
+      margin: 90px 0 65px -0.035em;
+      overflow-wrap: anywhere;
     }
 
-    .hero-title .second-line {
+    .hero-title span {
       display: block;
-      color: var(--red);
-      margin-left: 12%;
+    }
+
+    .hero-title span:last-child {
+      text-align: right;
     }
 
     .hero-bottom {
       display: flex;
       justify-content: space-between;
-      align-items: end;
+      align-items: flex-end;
       gap: 25px;
     }
 
     .hero-description {
-      max-width: 350px;
-      font-size: 13px;
-      line-height: 1.7;
+      max-width: 360px;
+      font-size: clamp(15px, 1.7vw, 21px);
+      line-height: 1.5;
     }
 
-    .button {
+    .hero-cta {
       display: inline-block;
-      background: var(--black);
-      color: var(--cream);
-      border: 1px solid var(--black);
-      padding: 16px 24px;
+      padding: 15px 22px;
+      border: 1px solid var(--foreground);
       font-size: 10px;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      transition: 0.25s;
-    }
-
-    .button:hover {
-      background: var(--red);
-      border-color: var(--red);
-    }
-
-    .button-light {
-      background: transparent;
-      color: var(--black);
-    }
-
-    .button-light:hover {
-      color: var(--cream);
-    }
-
-    /* MARQUEE */
-
-    .marquee {
-      overflow: hidden;
-      background: var(--red);
-      color: var(--cream);
-      padding: 17px 0;
+      transition: background 0.2s, color 0.2s;
       white-space: nowrap;
     }
 
-    .marquee-track {
-      display: inline-block;
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: 3px;
-      animation: move 25s linear infinite;
+    .hero-cta:hover {
+      background: var(--foreground);
+      color: var(--background);
     }
 
-    @keyframes move {
+    /* MOVING TEXT */
+
+    .marquee {
+      overflow: hidden;
+      padding: 17px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: move-text 35s linear infinite;
+    }
+
+    .marquee-track span {
+      flex-shrink: 0;
+      padding-right: 45px;
+      font-size: clamp(15px, 2vw, 23px);
+      font-style: italic;
+      letter-spacing: -0.5px;
+    }
+
+    @keyframes move-text {
       from {
         transform: translateX(0);
       }
+
       to {
-        transform: translateX(-30%);
+        transform: translateX(-50%);
       }
     }
 
-    /* SECTION GENERAL */
+    /* COLLECTION */
 
-    section {
-      padding: 90px 5%;
+    .section {
+      padding: 100px var(--page-padding);
     }
 
     .section-heading {
       display: flex;
       justify-content: space-between;
-      align-items: end;
+      align-items: flex-end;
       gap: 20px;
       margin-bottom: 35px;
     }
 
-    .eyebrow {
+    .section-label {
       font-size: 10px;
-      text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--grey);
-      margin-bottom: 14px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(35px, 6vw, 76px);
-      letter-spacing: -0.07em;
       text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(35px, 6vw, 78px);
       line-height: 0.95;
+      letter-spacing: -0.065em;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
-    /* COLLECTION */
-
-    .collection {
-      background: var(--black);
-      color: var(--cream);
-    }
-
-    .collection .eyebrow {
-      color: #b5b1a8;
+    .section-note {
+      max-width: 210px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+      text-align: right;
     }
 
     .collection-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 25px;
-      align-items: stretch;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
     }
 
-    .collection-image {
-      min-height: 520px;
-      background: #292824;
-      overflow: hidden;
-    }
-
-    .collection-image img {
-      height: 100%;
-      min-height: 520px;
-      object-fit: cover;
-      filter: grayscale(100%);
-      transition: transform 0.5s;
-    }
-
-    .collection-image:hover img {
-      transform: scale(1.04);
-    }
-
-    .collection-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 15px 0;
-    }
-
-    .collection-info h3 {
-      font-size: clamp(45px, 7vw, 95px);
-      letter-spacing: -0.08em;
-      line-height: 0.85;
-      text-transform: uppercase;
-    }
-
-    .collection-info h3 span {
-      color: var(--red);
-    }
-
-    .collection-info p {
-      max-width: 330px;
-      color: #c2bfb6;
-      font-size: 13px;
-      line-height: 1.8;
-      margin: 30px 0;
-    }
-
-    .collection-info .button {
-      align-self: flex-start;
-      background: var(--cream);
-      color: var(--black);
-      border-color: var(--cream);
-    }
-
-    .collection-info .button:hover {
-      background: var(--red);
-      color: white;
-      border-color: var(--red);
-    }
-
-    /* SHOP */
-
-    .shop {
-      background: var(--cream);
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+    .collection-card {
+      display: block;
+      min-width: 0;
     }
 
     .product-image {
-      aspect-ratio: 3 / 4;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      background: #e5e0d7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       overflow: hidden;
-      background: #dedbd2;
       position: relative;
     }
 
@@ -332,215 +275,222 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s;
+      display: block;
+      transition: transform 0.5s ease;
     }
 
-    .product-card:hover .product-image img {
-      transform: scale(1.04);
+    .collection-card:hover .product-image img {
+      transform: scale(1.035);
     }
 
-    .product-tag {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: var(--cream);
-      color: var(--black);
-      padding: 8px 10px;
-      font-size: 9px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+    .image-placeholder {
+      padding: 20px;
+      text-align: center;
+      color: #77756e;
+      font-size: 10px;
+      letter-spacing: 2px;
+      line-height: 2;
     }
 
-    .product-details {
+    .product-info {
+      padding: 15px 0;
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       gap: 12px;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--line);
     }
 
-    .product-details h3 {
+    .product-name {
       font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
     }
 
-    .product-details p {
-      font-size: 12px;
+    .product-description {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+
+    .product-action {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: right;
       white-space: nowrap;
     }
 
-    .product-category {
-      color: var(--grey);
-      font-size: 10px;
-      margin-top: 7px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .shop-note {
-      margin-top: 25px;
-      color: var(--grey);
-      font-size: 11px;
-      line-height: 1.7;
-    }
-
-    /* MANIFESTO */
+    /* BRAND PHILOSOPHY */
 
     .manifesto {
-      background: #e5e1d7;
-      text-align: center;
-      padding: 110px 8%;
+      background: var(--foreground);
+      color: var(--background);
+      padding: 100px var(--page-padding);
     }
 
-    .manifesto .eyebrow {
-      margin-bottom: 30px;
+    .manifesto-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-bottom: 45px;
     }
 
-    .manifesto h2 {
-      font-size: clamp(35px, 7.5vw, 100px);
-      font-weight: 900;
-      line-height: 0.98;
-      letter-spacing: -0.08em;
-      text-transform: uppercase;
+    .manifesto-title {
       max-width: 1100px;
-      margin: 0 auto;
+      font-size: clamp(35px, 7.2vw, 96px);
+      line-height: 1.04;
+      letter-spacing: -0.065em;
+      font-weight: 500;
     }
 
-    .manifesto h2 span {
-      color: var(--red);
+    .manifesto-title em {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
 
-    .manifesto p {
-      max-width: 520px;
-      margin: 30px auto;
-      font-size: 13px;
-      line-height: 1.9;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: var(--cream);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-    }
-
-    .contact h2 {
-      font-size: clamp(50px, 9vw, 115px);
-      line-height: 0.85;
-      letter-spacing: -0.09em;
+    .manifesto-bottom {
+      margin-top: 65px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(243, 240, 233, 0.3);
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
     }
 
-    .contact h2 span {
-      color: var(--red);
+    /* POETIC SECTION */
+
+    .poetry {
+      padding: 100px var(--page-padding);
     }
 
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 35px;
+    .poem {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    .contact-info p {
-      max-width: 400px;
-      font-size: 13px;
-      line-height: 1.8;
+    .poem-line {
+      font-size: clamp(24px, 5vw, 58px);
+      line-height: 1.35;
+      letter-spacing: -0.045em;
+      margin: 15px 0;
     }
 
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .poem-line em {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    .poem-caption {
+      margin-top: 45px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      text-transform: uppercase;
     }
 
     /* FOOTER */
 
-    footer {
-      background: var(--black);
-      color: var(--cream);
-      padding: 30px 5%;
+    .footer {
+      padding: 55px var(--page-padding) 25px;
+      border-top: 1px solid var(--line);
     }
 
     .footer-top {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding-bottom: 25px;
-      border-bottom: 1px solid #45443e;
+      gap: 30px;
+      flex-wrap: wrap;
     }
 
-    .footer-logo {
-      font-size: clamp(22px, 4vw, 45px);
+    .footer-brand {
+      font-size: clamp(35px, 8vw, 90px);
       font-weight: 900;
-      letter-spacing: -2px;
-    }
-
-    .footer-logo span {
-      color: var(--red);
+      letter-spacing: -0.08em;
     }
 
     .footer-links {
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .footer-links a {
+      flex-direction: column;
+      gap: 13px;
       font-size: 10px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
     .footer-bottom {
+      margin-top: 60px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
       display: flex;
       justify-content: space-between;
-      gap: 20px;
-      padding-top: 20px;
-      color: #a5a299;
-      font-size: 10px;
-      line-height: 1.7;
+      gap: 15px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 1px;
+      line-height: 1.8;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .marquee-track {
+        animation: none;
+      }
+
+      .product-image img {
+        transition: none;
+      }
     }
 
     /* MOBILE */
 
-    @media (max-width: 700px) {
-      header {
-        padding: 18px 5%;
+    @media (max-width: 650px) {
+      :root {
+        --page-padding: 6vw;
       }
 
-      nav {
-        gap: 13px;
+      .navbar {
+        min-height: 65px;
       }
 
-      nav a {
-        font-size: 9px;
-        letter-spacing: 0.5px;
-      }
-
-      nav .nav-about {
+      .nav-links {
         display: none;
+        position: absolute;
+        z-index: 10;
+        top: 105px;
+        left: 0;
+        right: 0;
+        background: var(--background);
+        padding: 25px var(--page-padding);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
       }
 
-      .nav-shop {
-        padding: 10px 12px;
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-button {
+        display: block;
       }
 
       .hero {
-        min-height: 490px;
-        padding-top: 30px;
+        min-height: 73vh;
+        padding-top: 35px;
       }
 
       .hero-title {
-        font-size: 17vw;
-        margin: 65px 0;
+        font-size: clamp(57px, 15vw, 100px);
+        margin: 80px 0;
       }
 
       .hero-bottom {
@@ -549,11 +499,14 @@
       }
 
       .hero-description {
-        font-size: 12px;
+        max-width: 300px;
       }
 
-      section {
-        padding: 65px 5%;
+      .section,
+      .manifesto,
+      .poetry {
+        padding-top: 70px;
+        padding-bottom: 70px;
       }
 
       .section-heading {
@@ -561,50 +514,31 @@
         flex-direction: column;
       }
 
+      .section-note {
+        text-align: left;
+      }
+
       .collection-grid {
-        grid-template-columns: 1fr;
+        gap: 10px;
       }
 
-      .collection-image,
-      .collection-image img {
-        min-height: 400px;
-      }
-
-      .collection-info {
-        gap: 25px;
-      }
-
-      .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .product-card:last-child {
-        display: none;
-      }
-
-      .product-details {
+      .product-info {
         flex-direction: column;
-        gap: 8px;
       }
 
-      .product-details h3,
-      .product-details p {
-        font-size: 11px;
+      .product-action {
+        text-align: left;
       }
 
-      .manifesto {
-        padding: 80px 6%;
+      .manifesto-bottom {
+        flex-direction: column;
       }
 
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
+      .footer-top {
+        flex-direction: column;
       }
 
-      .footer-top,
       .footer-bottom {
-        align-items: flex-start;
         flex-direction: column;
       }
     }
@@ -613,19 +547,36 @@
 
 <body>
 
+  <!-- ANNOUNCEMENT -->
+
   <div class="announcement">
-    Independent by nature — LOVE IS WAR®
+    Born from Conflict — Nairobi, Kenya — International Delivery
   </div>
 
-  <header>
-    <a href="#home" class="logo">LOVE IS WAR<span>®</span></a>
+  <!-- NAVIGATION -->
 
-    <nav>
+  <header class="navbar">
+
+    <a class="logo" href="#home" aria-label="Love Is War home">
+      LOVE IS WAR
+    </a>
+
+    <nav class="nav-links" id="navigation">
       <a href="#collection">Collection</a>
-      <a href="#shop">Shop</a>
-      <a href="#about" class="nav-about">Our Story</a>
-      <a href="#contact" class="nav-shop">Contact</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#story">Our Story</a>
+      <a href="/shop/">Shop</a>
     </nav>
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-expanded="false"
+      aria-controls="navigation"
+    >
+      MENU +
+    </button>
+
   </header>
 
   <main>
@@ -633,245 +584,300 @@
     <!-- HERO -->
 
     <section class="hero" id="home">
+
       <div class="hero-top">
-        <span>Independent Fashion Label</span>
-        <span>Made to Mean Something.</span>
+
+        <div class="eyebrow">
+          Born from Conflict<br>
+          An ongoing exploration
+        </div>
+
+        <div class="eyebrow hero-location">
+          Nairobi, Kenya<br>
+          Worldwide
+        </div>
+
       </div>
 
       <h1 class="hero-title">
-        LOVE
-        <span class="second-line">IS WAR.</span>
+        <span>LOVE</span>
+        <span>IS WAR</span>
       </h1>
 
       <div class="hero-bottom">
+
         <p class="hero-description">
-          Clothing as a language. Identity as resistance.
-          Every piece carries a feeling, a thought, or a story
-          that words alone cannot tell.
+          The art of being human in the presence of another.
+          An expression of everything we carry, everything
+          we lose, and everything we become.
         </p>
 
-        <a href="#collection" class="button">Explore the Collection ↗</a>
+        <a class="hero-cta" href="#collection">
+          Enter the collection ↗
+        </a>
+
       </div>
+
     </section>
 
-    <!-- MOVING TEXT -->
+    <!-- MOVING TYPOGRAPHY -->
 
-    <div class="marquee">
+    <section class="marquee" aria-label="Brand philosophy">
+
       <div class="marquee-track">
-        LOVE IS WAR® — WEAR YOUR STORY — INDEPENDENT CULTURE —
-        LOVE IS WAR® — WEAR YOUR STORY — INDEPENDENT CULTURE —
-        LOVE IS WAR® — WEAR YOUR STORY —
+
+        <span>We enter love unarmed and leave in ruins.</span>
+        <span>Love is the only war we enter willingly.</span>
+        <span>Every encounter leaves a mark.</span>
+        <span>We enter love unarmed and leave in ruins.</span>
+        <span>Love is the only war we enter willingly.</span>
+        <span>Every encounter leaves a mark.</span>
+
       </div>
-    </div>
 
-    <!-- FEATURED COLLECTION -->
+    </section>
 
-    <section class="collection" id="collection">
+    <!-- COLLECTION -->
+
+    <section class="section" id="collection">
+
       <div class="section-heading">
+
         <div>
-          <p class="eyebrow">01 / The Latest Work</p>
-          <h2>Featured<br>Collection.</h2>
+          <p class="section-label">01 — The wardrobe</p>
+          <h2 class="section-title">The collection</h2>
         </div>
-        <p class="eyebrow">Clothing with a point of view.</p>
+
+        <p class="section-note">
+          Pieces carrying fragments of a story.
+          Discover the collection.
+        </p>
+
       </div>
 
       <div class="collection-grid">
-        <div class="collection-image">
-          <img
-            src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1200&q=85"
-            alt="Streetwear fashion collection"
-          >
-        </div>
 
-        <div class="collection-info">
-          <div>
-            <p class="eyebrow">LOVE IS WAR® / Collection 001</p>
-            <h3>More Than<br><span>Clothing.</span></h3>
-            <p>
-              We create pieces that exist between fashion, emotion
-              and culture. Designed for people who choose to express
-              themselves instead of fitting into expectations.
-            </p>
+        <!-- PRODUCT 1 -->
+
+        <a class="collection-card" href="/shop/">
+
+          <div class="product-image">
+
+            <!-- Replace this placeholder with your product image.
+                 Example:
+                 <img src="images/product-01.jpg"
+                      alt="Love Is War garment">
+            -->
+
+            <div class="image-placeholder">
+              LOVE IS WAR<br>
+              PRODUCT IMAGE 01
+            </div>
+
           </div>
 
-          <a href="#shop" class="button">View Pieces ↗</a>
-        </div>
+          <div class="product-info">
+
+            <div>
+              <h3 class="product-name">The first piece</h3>
+              <p class="product-description">
+                Discover the garment in the store.
+              </p>
+            </div>
+
+            <span class="product-action">View piece ↗</span>
+
+          </div>
+
+        </a>
+
+        <!-- PRODUCT 2 -->
+
+        <a class="collection-card" href="/shop/">
+
+          <div class="product-image">
+
+            <div class="image-placeholder">
+              LOVE IS WAR<br>
+              PRODUCT IMAGE 02
+            </div>
+
+          </div>
+
+          <div class="product-info">
+
+            <div>
+              <h3 class="product-name">The next chapter</h3>
+              <p class="product-description">
+                Explore the available collection.
+              </p>
+            </div>
+
+            <span class="product-action">View piece ↗</span>
+
+          </div>
+
+        </a>
+
       </div>
+
+      <div style="margin-top: 35px;">
+        <a class="hero-cta" href="/shop/">
+          Enter the store ↗
+        </a>
+      </div>
+
     </section>
 
-    <!-- SHOP -->
+    <!-- PHILOSOPHY -->
 
-    <section class="shop" id="shop">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">02 / Shop the Label</p>
-          <h2>Selected<br>Pieces.</h2>
-        </div>
+    <section class="manifesto" id="philosophy">
 
-        <a href="#contact" class="button button-light">Enquire About Pieces ↗</a>
-      </div>
-
-      <div class="product-grid">
-
-        <article class="product-card">
-          <a href="#contact">
-            <div class="product-image">
-              <span class="product-tag">Featured Piece</span>
-              <img
-                src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&q=85"
-                alt="Denim trousers"
-                loading="lazy"
-              >
-            </div>
-          </a>
-
-          <div class="product-details">
-            <div>
-              <h3>Statement Denim</h3>
-              <div class="product-category">Bottoms / Denim</div>
-            </div>
-            <p>Enquire</p>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <a href="#contact">
-            <div class="product-image">
-              <span class="product-tag">Everyday Wear</span>
-              <img
-                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85"
-                alt="Minimal graphic t-shirt"
-                loading="lazy"
-              >
-            </div>
-          </a>
-
-          <div class="product-details">
-            <div>
-              <h3>Graphic Tee</h3>
-              <div class="product-category">Tops / Graphic</div>
-            </div>
-            <p>Enquire</p>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <a href="#contact">
-            <div class="product-image">
-              <span class="product-tag">Experimental</span>
-              <img
-                src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=85"
-                alt="Contemporary streetwear"
-                loading="lazy"
-              >
-            </div>
-          </a>
-
-          <div class="product-details">
-            <div>
-              <h3>Experimental Wear</h3>
-              <div class="product-category">Limited Pieces</div>
-            </div>
-            <p>Enquire</p>
-          </div>
-        </article>
-
-      </div>
-
-      <p class="shop-note">
-        These are demonstration products and reference images.
-        Replace them with your actual designs, product names and prices.
-        Online checkout is not connected yet.
+      <p class="manifesto-label">
+        02 — What LOVE IS WAR stands for
       </p>
-    </section>
 
-    <!-- BRAND STORY -->
-
-    <section class="manifesto" id="about">
-      <p class="eyebrow">03 / The Philosophy</p>
-
-      <h2>
-        Not Made To<br>
-        <span>Fit In.</span><br>
-        Made To Mean Something.
+      <h2 class="manifesto-title">
+        The art of being human in the presence of another.
+        We are shaped by the people we love, the things we
+        lose, and the <em>conflicts that make us.</em>
       </h2>
 
-      <p>
-        LOVE IS WAR® is an independent fashion project built around
-        the tension between love and conflict, vulnerability and
-        strength, belonging and individuality. We use clothing as
-        a space for storytelling, experimentation and self-expression.
-      </p>
+      <div class="manifesto-bottom">
 
-      <a href="#contact" class="button">Connect With Us ↗</a>
-    </section>
-
-    <!-- CONTACT -->
-
-    <section class="contact" id="contact">
-      <div class="contact-grid">
-
-        <div>
-          <p class="eyebrow">04 / Start a Conversation</p>
-          <h2>Let's<br>Make<br><span>Contact.</span></h2>
-        </div>
-
-        <div class="contact-info">
-          <p>
-            Interested in a piece, a collaboration or what we are
-            working on next? Get in touch with LOVE IS WAR®.
-          </p>
-
-          <div class="contact-links">
-            <!-- Replace the Instagram URL below with your real account -->
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button"
-            >
-              Instagram ↗
-            </a>
-
-            <!-- Replace the email address with your real business email -->
-            <a
-              href="mailto:hello@loveiswar.com"
-              class="button button-light"
-            >
-              Email Us ↗
-            </a>
-          </div>
-
-          <p class="eyebrow">
-            Independent Fashion / Kenya
-          </p>
-        </div>
+        <span>Born from Conflict</span>
+        <span>Nairobi, Kenya</span>
+        <span>A study of being human</span>
 
       </div>
+
+    </section>
+
+    <!-- POETRY / BRAND STORY -->
+
+    <section class="poetry" id="story">
+
+      <div class="poem">
+
+        <p class="section-label">03 — Fragments of us</p>
+
+        <p class="poem-line">
+          We enter love <em>unarmed</em>
+        </p>
+
+        <p class="poem-line">
+          and leave in ruins.
+        </p>
+
+        <p class="poem-line">
+          Still, we return.
+        </p>
+
+        <p class="poem-line">
+          Because love is the only war
+        </p>
+
+        <p class="poem-line">
+          we enter <em>willingly.</em>
+        </p>
+
+        <p class="poem-caption">
+          LOVE IS WAR — Born from Conflict
+        </p>
+
+      </div>
+
     </section>
 
   </main>
 
   <!-- FOOTER -->
 
-  <footer>
+  <footer class="footer">
+
     <div class="footer-top">
-      <a href="#home" class="footer-logo">LOVE IS WAR<span>®</span></a>
+
+      <div>
+        <p class="section-label">Born from Conflict</p>
+        <div class="footer-brand">LOVE IS WAR</div>
+        <p class="product-description">
+          Nairobi, Kenya · International delivery
+        </p>
+      </div>
 
       <div class="footer-links">
-        <a href="#collection">Collection</a>
-        <a href="#shop">Shop</a>
-        <a href="#about">Our Story</a>
-        <a href="#contact">Contact</a>
+
+        <a href="/shop/">Shop the collection</a>
+
+        <a
+          href="https://www.instagram.com/__loveiswar__/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram ↗
+        </a>
+
+        <a
+          href="https://wa.me/254742508655"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Contact us on WhatsApp ↗
+        </a>
+
       </div>
+
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 LOVE IS WAR®. All rights reserved.</p>
-      <p>Independent by nature. Unapologetic by design.</p>
+
+      <span>© <span id="year"></span> LOVE IS WAR</span>
+
+      <span>NAIROBI, KENYA</span>
+
+      <span>BORN FROM CONFLICT</span>
+
     </div>
+
   </footer>
+
+  <script>
+    // Automatically update the copyright year.
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Mobile navigation.
+
+    const menuButton = document.getElementById("menuButton");
+    const navigation = document.getElementById("navigation");
+
+    menuButton.addEventListener("click", function () {
+
+      const isOpen = navigation.classList.toggle("open");
+
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+
+      menuButton.textContent = isOpen ? "CLOSE −" : "MENU +";
+
+    });
+
+    // Close the mobile menu after selecting a link.
+
+    navigation.querySelectorAll("a").forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        navigation.classList.remove("open");
+
+        menuButton.setAttribute("aria-expanded", "false");
+
+        menuButton.textContent = "MENU +";
+
+      });
+
+    });
+  </script>
 
 </body>
 </html>
-```
